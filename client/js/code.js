@@ -1,8 +1,8 @@
 const url = "http://localhost:3000"
 
+
 var app = new Vue ( {
     el: "#app",
-
     data: {
         page: "main",
         new_title: "",
@@ -45,7 +45,6 @@ var app = new Vue ( {
         imageName: '',
 		imageUrl: '',
         imageFile: '',
-        overlay: false,
 
 
     },
@@ -150,14 +149,9 @@ var app = new Vue ( {
 				credentials: "include",
 			}).then(function(response) {
 				response.json().then(function(data) {
-                    if(response.status == 200){
-                        app.users_id = data.user_id
-                        app.isLoggedin = true
-                        app.Get_whole_user();
-                    }
-                    // app.users_id = data.user_id
-                    // app.isLoggedin = true
-                    // app.Get_whole_user();
+                    app.users_id = data.user_id
+                    app.isLoggedin = true
+                    app.Get_whole_user();
                     //console.log("/user/get/login: ", users_id)
 				});
 			});
@@ -181,15 +175,13 @@ var app = new Vue ( {
 						alert(data.msg);
 					})
 				} else if (response.status == 201) {
-                    console.log("It worked");
-                    app.page = "main"
+					console.log("It worked");
 				}
 			});
         },
 
         //login a user
         loginUser: function() {
-            this.overlay = true;
 			fetch(`${url}/users/login`, {
 				method: "POST",
 				credentials: "include",
@@ -209,7 +201,6 @@ var app = new Vue ( {
                         app.Get_whole_user();
                         console.log("logged in")
                         app.page = "main";
-                        app.overlay = false;
                         //console.log("login: ", users_id)
 					})
 				}
@@ -338,7 +329,6 @@ var app = new Vue ( {
             fetch(`${url}/logout`).then(function(response){
                 console.log("logged out")
                 //switch to login
-                app.isLoggedin = false;
             })
         },
 

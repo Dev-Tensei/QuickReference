@@ -8,27 +8,26 @@
     <head>
     	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.5.16/vuetify.min.css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
+    <body>
     <div id="app" v-cloak>
     	<v-app>
     		<v-content>
-				<!-- #05386B BLUE -->
-				<v-toolbar color="#67FDCF" flat v-if="page == 'signUp'">
-	    				<v-toolbar-title>
+    			<!-- #05386B BLUE -->
+    			<v-toolbar v-if="page=='signUp'" color="#67FDCF" flat>
+	    				<v-toolbar-title >
 	    					<v-btn color="#05386B" flat large v-on:click="page='main'">TutorialKnight</v-btn>
 	    				</v-toolbar-title>
-	                        
-	    		</v-toolbar>
+	    			</v-toolbar>
     			<v-parallax
 
     				height=1000
     				src="mainpara.jpg"
-					v-if="page=='main'"
-					>
-					<!--v-if="!isLoggedin"  -->
+    				v-if="page=='main'"
+    				>
 	    			<v-toolbar color="#7DFEA4" flat v-if="!isLoggedin">
 	    				<v-toolbar-title>
 	    					<v-btn color="#05386B" flat large v-on:click="page='main'">TutorialKnight</v-btn>
@@ -45,17 +44,16 @@
 	    				</v-toolbar-title>
 	    				<v-spacer></v-spacer>
 	    				<v-toolbar-items>
-	    					<v-btn color="#05386B" flat small href="display.html">Tutorial</v-btn>
+	    					<v-btn color="#05386B" flat small>Tutorial</v-btn>
 	    					<v-btn color="#05386B" flat href="form.html" small>Create</v-btn>
-	    					<v-btn flat small color="#05386B" @click="LogOut()">Log Out</v-btn>
+	    					<v-btn flat small color="#05386B">Log Out</v-btn>
 	    				</v-toolbar-items>
-					</v-toolbar>
-				
+	    			</v-toolbar>
 	    			<v-container v-if="page=='main'" grid-list-lg fluid pa-5>
 						 <v-layout>
 						 	<v-flex xs6 pa-3>
 								<v-card-title>
-									<v-img src="tknightB.png" height="360" contain>
+									<v-img src="images/tknightB.png" height="360" contain>
 								</v-card-title>
 								<div id="fade">
 									<p class="display-1 text-xs-center" style="color: #05386B">
@@ -72,7 +70,7 @@
 									<p class="subheading text-xs-left" style="color: #05386B">Make your handmade tutorials and access them easily</p>
 								</div>
 								<div class="btnHome mt-4">
-									<v-btn style="color: #5CDB95" color="#05386B" large block @click="page = 'signUp'">Get Started</v-btn>
+									<v-btn style="color: #5CDB95" color="#05386B" v-on:click="page='signUp'" large block>Get Started</v-btn>
 								</div>
 								<!--<div class="item" data-aos="fade-left">YOOOO</div> -->
 						 	</v-flex>
@@ -91,7 +89,7 @@
 				     class="btnHeight"
 				     
 				     >
-				     <v-btn floating fixed bottom right round color="#1F2605" dark v-if="page=='main'" href="form.html">Get Started</v-btn>
+				     <v-btn floating fixed bottom right round color="#1F2605" v-on:click="page='signUp'" dark v-if="page=='main'">Get Started</v-btn>
 				</div>
 				<!-- Split lower half of main page -->
 				<v-container v-if="page=='main'" grid-list-lg fluid class="back">
@@ -115,7 +113,7 @@
 							</v-parallax>
 						</v-flex>
 						<v-flex xs6>
-							<img class="backImage" src="vue2tut.png" contain>
+							<img class="backImage" src="images/TutExample.png" contain>
 						</v-flex>
 						<v-flex xs3></v-flex>
 						
@@ -129,7 +127,7 @@
 							
 						</v-flex>
 						<v-flex xs6 color="blue">
-							<img class="backImage" src="disP.png" contain>
+							<img class="backImage" src="images/TutExample.png" contain>
 						</v-flex>
 						<v-flex xs3>
 							<v-parallax height= 100>
@@ -202,7 +200,7 @@
 							color="#67FDCF"
 							>
 							<v-card-title>
-								<v-img src="tknightB.png" height="100" contain>
+								<v-img src="images/tknightB.png" height="100" contain>
 							</v-card-title>
 							<div id="fade">
 								<p class="display-1 text-xs-center" style="color: #05386B">
@@ -230,8 +228,7 @@
 							     		Log In
 							     	</v-tab>
 							     </v-tabs>
-								<v-spacer></v-spacer>
-								
+				                <v-spacer></v-spacer>
 				                <v-tooltip bottom>
 				                 
 				                </v-tooltip>
@@ -280,13 +277,13 @@
 				        <strong class="subheading">Get connected with us on social networks!</strong>
 				        <v-spacer></v-spacer>
 				        <v-btn icon>
-				          <img src="facebook-box.png">
+				          <img src="images/facebook-box.png">
 				        </v-btn>
 				        <v-btn icon>
-				          <img src="twitter-box.png">
+				          <img src="images/twitter-box.png">
 				        </v-btn>
 				        <v-btn icon>
-				          <img src="linkedin-box.png">
+				          <img src="images/linkedin-box.png">
 				        </v-btn>
 
 				      </v-card-title>
@@ -300,12 +297,14 @@
             </v-content>
         </v-app>
     </div>
+</body>
+
 
     
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.5.16/vuetify.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="code.js"></script>
+    <script src="js/code.js"></script>
     <script>
 	  AOS.init();
 	</script>

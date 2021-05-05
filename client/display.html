@@ -2,29 +2,29 @@
 <html>
     <head>
         <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet"> -->
-        <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.5.16/vuetify.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Material+Icons&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <div id="app">
     	<v-app>
-        <v-content>
-          <v-toolbar flat color="#5CDB95">
+    		<v-content>
+    			<v-toolbar flat color="#5CDB95">
             <v-toolbar-side-icon @click="tutNav = !tutNav" color="#5CDB95"></v-toolbar-side-icon>
     				<v-toolbar color="#5CDB95" flat>
-              <v-toolbar-title><v-btn href="main.html" color="#05386B" flat large>TutorialKnight</v-btn></v-toolbar-title>
-              <v-spacer></v-spacer>
-              <v-toolbar-items>
-                <v-btn flat href="display.html" color="#05386B" small>Tutorial</v-btn>
-                <v-btn flat href="form.html" color="#05386B" small>Create</v-btn>
-                <v-btn flat small color="#05386B">Log Out</v-btn>
-              </v-toolbar-items>
-            </v-toolbar>
+            <v-toolbar-title><v-btn href="main.html" color="#05386B" flat large>TutorialKnight</v-btn></v-toolbar-title>
+            <v-spacer></v-spacer>
+            <v-toolbar-items>
+              <v-btn flat href="display.html" color="#05386B" small>Tutorial</v-btn>
+              <v-btn flat href="form.html" color="#05386B" small>Create</v-btn>
+                        <v-btn flat small color="#05386B">Log Out</v-btn>
+            </v-toolbar-items>
+          </v-toolbar>
     			</v-toolbar>
           <v-navigation-drawer app v-model="tutNav">
-            <v-list>
-              <v-list-tile
+              <v-list>
+                  <v-list-tile
                       v-for="tut in entire_user.user_tut_list"
                       @click="selectTut(tut)">
                       <v-list-content>
@@ -62,24 +62,24 @@
 
 
                       <v-flex v-if="dispayTutFilled" xs12 ml-1>
-
+                        <v-container xs12>
+                          <v-card-text style="height: 0px;">
+                            <v-btn
+                              v-if="dispayTutFilled"
+                              fixed
+                              fab
+                              top
+                              right
+                              small
+                              flat
+                              @click="editMode=!editMode"
+                            >
+                              <v-icon>edit</v-icon>
+                            </v-btn>
+                          </v-card-text>
+                        </v-container>
 
                             <v-card flat color="#5cdb95" >
-                                <v-container xs12>
-          
-                                    <v-btn
-                                      v-if="dispayTutFilled"
-                                      fab
-                                      top
-                                      right
-                                      small
-                                      flat
-                                      @click="editMode=!editMode"
-                                    >
-                                      <v-icon>edit</v-icon>
-                                    </v-btn>
-                      
-                                </v-container>
                               <!-- Title -->
                               <v-card-title
                                   v-if="!editMode"
@@ -321,6 +321,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
-    <script src="code.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.5.16/vuetify.js"></script>
+    <script src="js/code.js"></script>
 </html>
