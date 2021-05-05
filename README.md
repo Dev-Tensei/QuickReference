@@ -4,7 +4,7 @@ A project built by Jorge Gomez, Seth Nielson, and Blake Cook
 ##Description
 Quick Reference is a note taking web app that allows users to stores notes in an accessible way online.
 
-![DragonBall Roster Show Case](https://github.com/Dev-Tensei/DragonBallRoster/blob/main/client/images/app_showcase.png?raw=true)
+![DragonBall Roster Show Case](https://github.com/Dev-Tensei/QuickReference/blob/main/client/images/homepage.png?raw=true)
 
 ### Technologies Used:
 - HTML & CSS
@@ -20,10 +20,10 @@ Through this project I got more experience in setting up a client side with Vue.
 This project was also done along with two other students. Teamwork composed of communicating efficiently in order to use a single Github repo and meet a project deadline on time. 
 
 ## Note Posting Example
-![DragonBall Roster Show Case](https://github.com/Dev-Tensei/DragonBallRoster/blob/main/client/images/app_showcase.png?raw=true)
+![DragonBall Roster Show Case](https://github.com/Dev-Tensei/QuickReference/blob/main/client/images/cta.png?raw=true)
 
 ## Login/Registration Functionality
-![DragonBall Roster Show Case](https://github.com/Dev-Tensei/DragonBallRoster/blob/main/client/images/app_showcase.png?raw=true)
+![DragonBall Roster Show Case](https://github.com/Dev-Tensei/QuickReference/blob/main/client/images/login.png?raw=true)
 
 ### Potential Improvements:
 - Attributing ID's to different schemas using the populate method.
