@@ -1,4 +1,4 @@
-# Quick Reference Project
+# Tutorial Knight Project
 A project built by Jorge Gomez, Seth Nielson, and Blake Cook
 
 ##Description
