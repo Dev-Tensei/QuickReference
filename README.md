@@ -2,7 +2,7 @@
 A project built by Jorge Gomez, Seth Nielson, and Blake Cook
 
 ## Description
-Quick Reference is a note taking web app that allows users to stores notes in an accessible way online.
+Tutorial Knight is a note taking web app that allows users to stores notes in an accessible way online.
 
 ![DragonBall Roster Show Case](https://github.com/Dev-Tensei/QuickReference/blob/main/client/images/homepage.png?raw=true)
 
